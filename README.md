@@ -20,11 +20,15 @@ contract Bank {
   function deposit() public payable {
       balances[msg.sender] += msg.value;
   }
+  
+  ...
 ```
 
 Of course, the bank must allow clients to withdraw their funds. To illustrate the differences between `send()`, `transfer()`, and `call()`, the bank has implemented its withdrawls by either method.
 
 ```
+  ... 
+  
   function withdraw_via_transfer(uint256 amount) public {
       // forwards 2300 gas, not adjustable
       require(balances[msg.sender] >= amount, "Invalid withdraw request");
