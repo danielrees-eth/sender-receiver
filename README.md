@@ -8,7 +8,7 @@ There are profound security implications to how contracts process ether, as we w
 
 ## Bank contract
 
-The bank contract allows anyone to deposit ether into it. A client must call the deposit() method and attach the ether along with the message. The bank must also keep track of how much each user has deposited.
+The bank contract allows anyone to deposit ether into it. A client must call the `deposit()` method and attach the ether along with the message. The bank must also keep track of how much each user has deposited.
 
 ```
 contract Bank {
@@ -22,7 +22,7 @@ contract Bank {
   }
 ```
 
-Of course, the bank must allow clients to withdraw their funds. To illustrate the differences between send(), transfer(), and call(), the bank has implemented its withdrawls by either method.
+Of course, the bank must allow clients to withdraw their funds. To illustrate the differences between `send()`, `transfer()`, and `call()`, the bank has implemented its withdrawls by either method.
 
 ```
   function withdraw_via_transfer(uint256 amount) public {
